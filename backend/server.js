@@ -1,15 +1,19 @@
-// Import modul Express
 const express = require('express');
-
-// Inisialisasi aplikasi Express
+const path = require('path');
 const app = express();
 
-// Tentukan port server
 const PORT = 3000;
 
-// Rute default
-app.get('/', (req, res) => {
-    res.send('Selamat datang di server sederhana!');
+// Middleware untuk melayani file statis
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Endpoint API
+app.get('/api/info', (req, res) => {
+    res.json({
+        aboutMe: "Halo! Saya adalah seorang pengembang web dengan passion di teknologi.",
+        email: "zepunchan@gmail.com",
+        phone: "+62 857-0225-3964"
+    });
 });
 
 // Jalankan server
