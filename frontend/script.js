@@ -1,14 +1,14 @@
-// Fetch data from the backend
+// Memastikan halaman memuat dengan benar
 document.addEventListener('DOMContentLoaded', () => {
-    fetch('/api/info')
-        .then(response => response.json())
-        .then(data => {
-            // Update the DOM with data from the server
-            document.getElementById('about-me').textContent = data.aboutMe;
-            document.getElementById('email').textContent = data.email;
-            document.getElementById('phone').textContent = data.phone;
-        })
-        .catch(error => {
-            console.error('Error fetching data:', error);
-        });
+    // Data langsung dari backend (contoh statis untuk simulasi)
+    const personalInfo = {
+        aboutMe: "Halo! Saya adalah seorang pengembang web dengan passion di teknologi.",
+        email: "zepunchan@gmail.com",
+        phone: "+62 857-0225-3964"
+    };
+
+    // Mengisi elemen HTML dengan data
+    document.getElementById('about-me').textContent = personalInfo.aboutMe;
+    document.getElementById('email').textContent = personalInfo.email;
+    document.getElementById('phone').textContent = personalInfo.phone;
 });
