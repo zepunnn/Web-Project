@@ -1,12 +1,10 @@
 window.onload = async () => {
-    // Teks animasi untuk header
+    // Menambahkan animasi ketikan pada header setelah window dimuat
     const typedHeader = "Selamat Datang!";
-    const typedElement = document.getElementById("typed-header");
-    
+    const typedElement = document.querySelector("header h1");
     let index = 0;
-    const typingSpeed = 100; // Kecepatan ketikan dalam ms
+    const typingSpeed = 100;
 
-    // Fungsi untuk animasi ketikan
     function typeWriter() {
         if (index < typedHeader.length) {
             typedElement.innerHTML += typedHeader.charAt(index);
