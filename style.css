@@ -101,27 +101,37 @@ footer {
     }
 }
 
-/* Animations */
-@keyframes typing {
-    from {
-        width: 0;
+/* Slide-in Animation */
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
     }
-    to {
-        width: 100%;
-    }
-}
-
-@keyframes blink {
-    50% {
-        border-color: transparent;
+    100% {
+        transform: translateX(0);
+        opacity: 1;
     }
 }
 
-/* Animation for text elements (typing effect) */
-.animate-text {
+/* Animations for slide-in effect */
+.slide-in {
     display: inline-block;
-    overflow: hidden;
-    white-space: nowrap;
-    border-right: 3px solid #fff;
-    animation: typing 2s steps(30) 1s forwards, blink 0.75s step-end infinite;
+    animation: slideIn 1s ease-out forwards;
+}
+
+/* Animation delay for each element */
+#about h2 {
+    animation-delay: 0.5s;
+}
+
+#about p {
+    animation-delay: 1s;
+}
+
+#contact h2 {
+    animation-delay: 1.5s;
+}
+
+#contact p {
+    animation-delay: 2s;
 }
