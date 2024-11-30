@@ -1,66 +1,88 @@
-/* Reset */
-body {
+/* Reset styles */
+* {
     margin: 0;
     padding: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: #121212;
-    color: #ffffff;
+    box-sizing: border-box;
 }
 
-/* Header */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #2a2a2a, #121212);
+    color: #f0f0f0;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* Header styles */
 header {
-    background-color: #1f1f1f;
-    color: #4CAF50;
     text-align: center;
-    padding: 1.5em 0;
+    padding: 50px 0;
+    background: linear-gradient(135deg, #5e5c5c, #2c2a2a);
+    border-bottom: 2px solid #444;
 }
 
 header h1 {
-    margin: 0;
-    font-size: 2.5em;
+    font-size: 3em;
+    color: #fff;
+    margin-bottom: 10px;
 }
 
 header p {
-    margin: 0.5em 0 0;
     font-size: 1.2em;
+    color: #bbb;
 }
 
-/* Main Content */
+/* Main section styles */
 main {
-    padding: 2em;
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
+/* Section styling */
 section {
-    margin-bottom: 2em;
-    padding: 1em;
-    border: 1px solid #333;
-    border-radius: 8px;
-    background-color: #1e1e1e;
+    margin-bottom: 40px;
 }
 
-h2 {
+section h2 {
+    font-size: 2em;
     color: #4CAF50;
+    border-bottom: 2px solid #4CAF50;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
 }
 
-p {
-    margin: 0.5em 0;
+section p {
+    font-size: 1.1em;
+    color: #ddd;
 }
 
-/* Footer */
+/* Footer styles */
 footer {
-    background-color: #1f1f1f;
-    color: #4CAF50;
     text-align: center;
-    padding: 1em 0;
-    margin-top: 2em;
+    padding: 20px 0;
+    background-color: #121212;
+    color: #bbb;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 
-/* Links */
-a {
-    color: #4CAF50;
-    text-decoration: none;
-}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5em;
+    }
 
-a:hover {
-    text-decoration: underline;
+    header p {
+        font-size: 1em;
+    }
+
+    section h2 {
+        font-size: 1.8em;
+    }
+
+    section p {
+        font-size: 1em;
+    }
 }

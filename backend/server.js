@@ -16,6 +16,14 @@ app.get('/api/info', (req, res) => {
     });
 });
 
+module.exports = (req, res) => {
+    res.status(200).json({
+        aboutMe: "Halo! Saya adalah seorang pengembang web dengan passion di teknologi.",
+        email: "zepunchan@gmail.com",
+        phone: "+62 857-0225-3964"
+    });
+};
+
 // Jalankan server
 app.listen(PORT, () => {
     console.log(`Server berjalan di http://localhost:${PORT}`);

@@ -1,14 +1,14 @@
-// Memastikan halaman memuat dengan benar
-document.addEventListener('DOMContentLoaded', () => {
-    // Data langsung dari backend (contoh statis untuk simulasi)
-    const personalInfo = {
-        aboutMe: "Halo! Saya adalah seorang pengembang web dengan passion di teknologi.",
-        email: "zepunchan@gmail.com",
-        phone: "+62 857-0225-3964"
-    };
+window.onload = async () => {
+    try {
+        // Mengambil data tentang diri dan kontak dari backend
+        const response = await fetch('/api/info');
+        const data = await response.json();
 
-    // Mengisi elemen HTML dengan data
-    document.getElementById('about-me').textContent = personalInfo.aboutMe;
-    document.getElementById('email').textContent = personalInfo.email;
-    document.getElementById('phone').textContent = personalInfo.phone;
-});
+        // Menampilkan data yang diterima pada bagian yang sesuai
+        document.getElementById('about-me').textContent = data.aboutMe;
+        document.getElementById('email').textContent = data.email;
+        document.getElementById('phone').textContent = data.phone;
+    } catch (error) {
+        console.error('Error fetching data:', error);
+    }
+};
